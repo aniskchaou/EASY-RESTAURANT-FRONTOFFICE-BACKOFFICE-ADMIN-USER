@@ -21,7 +21,7 @@ class CreateComandTable extends Migration
             $table->string('date');
             $table->string('number_person');
             $table->string('address');
-            $table->timestamps();
+            
         });
     }
 
@@ -32,6 +32,6 @@ class CreateComandTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comand');
+        Schema::dropIfExists('book');
     }
 }

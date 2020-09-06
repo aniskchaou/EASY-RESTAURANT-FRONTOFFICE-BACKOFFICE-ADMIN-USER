@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $pds = Product::all();  
+  
+        return view('pages.product.index', compact('pds'));
     }
 
     /**
@@ -23,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.product.create'); 
     }
 
     /**
@@ -34,7 +37,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([  
+            'category'=>'name',  
+            'category'=>'description',  
+            'category'=>'category_id',  
+            'category'=>'price',  
+        ]);  
+  
+        $pd = new Product;  
+        $pd->name =  $request->get('name');
+        $pd->description =  $request->get('description');
+        $pd->category_id =  $request->get('category_id');
+        $pd->price =  $request->get('price');
+        $pd->save();
     }
 
     /**
@@ -56,7 +71,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pd= Product::find($id);  
+     return view('pages.product.edit', compact('pd')); 
     }
 
     /**
@@ -68,7 +84,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $request->validate([  
+            'category'=>'name',  
+            'category'=>'description',  
+            'category'=>'category_id',  
+            'category'=>'price',  
+        ]);  
+  
+        $pd = Product::find($id);  
+        $pd->name =  $request->get('name');
+        $pd->description =  $request->get('description');
+        $pd->category_id =  $request->get('category_id');
+        $pd->price =  $request->get('price');
+        $pd->save();
     }
 
     /**
@@ -79,6 +107,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pd=Product::find($id);  
+        $pd->delete();
     }
 }

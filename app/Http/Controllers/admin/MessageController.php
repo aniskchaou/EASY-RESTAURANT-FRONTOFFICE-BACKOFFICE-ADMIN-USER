@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Message;
 
-class UserrController extends Controller
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class UserrController extends Controller
      */
     public function index()
     {
-        //
+        $msgs = Message::all();  
+  
+        return view('pages.message.index', compact('msgs'));  
     }
 
     /**
@@ -23,7 +26,7 @@ class UserrController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.message.create'); 
     }
 
     /**
@@ -34,7 +37,19 @@ class UserrController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([  
+            'name'=>'required', 
+            'email'=>'required', 
+            'telephone'=>'required', 
+            'message'=>'required',  
+        ]);  
+  
+        $msg = new Message;  
+        $msg->name =  $request->get('name');
+        $msg->email =  $request->get('email');
+        $msg->telephone =  $request->get('telephone');
+        $msg->message =  $request->get('message');
+        $msg->save();
     }
 
     /**
@@ -56,7 +71,8 @@ class UserrController extends Controller
      */
     public function edit($id)
     {
-        //
+        $msg= Message::find($id);  
+     return view('pages.message.edit', compact('msg')); 
     }
 
     /**
@@ -68,7 +84,20 @@ class UserrController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([  
+            'name'=>'required',
+            'email'=>'required',
+            'telephone'=>'required',
+            'message'=>'required',  
+             
+        ]);  
+  
+        $msg = Message::find($id);  
+        $msg->name =  $request->get('name');
+        $msg->email =  $request->get('email');
+        $msg->telephone =  $request->get('telephone');
+        $msg->message =  $request->get('message');    
+        $msg->save();
     }
 
     /**
@@ -79,6 +108,7 @@ class UserrController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $msg=Message::find($id);  
+        $msg->delete();
     }
 }

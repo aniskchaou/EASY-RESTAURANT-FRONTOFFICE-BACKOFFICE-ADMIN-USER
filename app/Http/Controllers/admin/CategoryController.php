@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\admin;
+use App\Category;
 use Illuminate\Http\Request;
-
-class MessageController extends Controller
+use App\Http\Controllers\Controller;
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+         $cats = Category::all();  
+  
+        return view('admin.pages.category.index', compact('cats'));  
     }
 
     /**
@@ -24,6 +26,7 @@ class MessageController extends Controller
     public function create()
     {
         //
+        return view('pages.category.create');  
     }
 
     /**
@@ -34,7 +37,13 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([  
+            'category'=>'required',  
+        ]);  
+  
+        $cat = new Category;  
+        $cat->name =  $request->get('category');
+        $cat->save();   
     }
 
     /**
@@ -56,7 +65,9 @@ class MessageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cat= Category::find($id);  
+     return view('pages.category.edit', compact('cat'));  
+        
     }
 
     /**
@@ -68,7 +79,14 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $request->validate([  
+            'category'=>'required',  
+             
+        ]);  
+  
+        $cat = Category::find($id);  
+        $cat->name =  $request->get('category');    
+        $cat->save();
     }
 
     /**
@@ -79,6 +97,7 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $cat=Category::find($id);  
+        $cat->delete(); 
     }
 }
