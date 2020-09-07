@@ -1,6 +1,7 @@
 <div class="headerwrapper">
   <div id="header" class="container">
-    <div class="logo"> <a href="#"><img src="images/LOGO.png" alt="logo" width="165" height="74"></a> </div> <!--end of Logo-->
+
+    <div class="logo"> <a href="#"><img src="{{asset('assets/images/log.png')}}" alt="logo" width="80" height="80"></a> </div> <!--end of Logo-->
         <nav>
             <ul id="navigations">
                 <li><a href="{{asset('/')}}">HOME </a></li>

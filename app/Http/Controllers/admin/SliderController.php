@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\admin;
+use App\Slider;
+use App\Product;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class SliderController extends Controller
 {
     /**
@@ -13,10 +14,11 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $cats = Category::all();  
+        $sls = Slider::all();
+        $pds = Product::all();
+        return view('admin.pages.slider.index', compact('sls','pds'));
+    }   
   
-        return view('pages.category.index', compact('cats'));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -25,7 +27,8 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('pages.category.create'); 
+         $pds = Product::all(); 
+        return view('admin.pages.slider.create',compact('pds')); 
     }
 
     /**
@@ -37,12 +40,13 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $request->validate([  
-            'category'=>'required',  
+            'product_id'=>'required',  
         ]);  
   
-        $cat = new Category;  
-        $cat->name =  $request->get('category');
-        $cat->save();
+        $sl = new Slider;  
+        $sl->product_id =  $request->get('product_id');
+        $sl->save();
+        return redirect('/slider/index');
     }
 
     /**
@@ -65,7 +69,7 @@ class SliderController extends Controller
     public function edit($id)
     {
         $cat= Category::find($id);  
-     return view('pages.category.edit', compact('cat')); 
+     return view('admin.pages.category.edit', compact('cat')); 
     }
 
     /**
@@ -95,7 +99,8 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $cat=Category::find($id);  
-        $cat->delete();
+        $sl=Slider::find($id);  
+        $sl->delete();
+        return redirect('/slider/index');
     }
 }

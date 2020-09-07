@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-
+use App\Slider;
+use App\Product;
 class HomeController extends Controller
 {
 	public function __construct()
@@ -16,7 +17,9 @@ class HomeController extends Controller
 
     function index()
     {
-    	return view('pages.home', array('user' => 1));
+         $sls = Slider::all();
+        $pds = Product::limit(3)->get();
+    	return view('home',compact('pds','sls'));
     }
 
     public function showLogin()
@@ -29,8 +32,8 @@ class HomeController extends Controller
 {
 // validate the info, create rules for the inputs
 $rules = array(
-    'name'    => 'required|', // make sure the email is an actual email
-    'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
+    'name'    => 'required', // make sure the email is an actual email
+    'password' => 'required|min:3' // password can only be alphanumeric and has to be greater than 3 characters
 );
 
 // run the validation rules on the inputs from the form
@@ -48,15 +51,17 @@ if ($validator->fails()) {
         'name'     => Input::get('name'),
         'password'  => Input::get('password')
     );
-  
+
+   
     // attempt to do the login
+   
     if (Auth::attempt($userdata)) {
 
         // validation successful!
         // redirect them to the secure section or whatever
-        // return Redirect::to('secure');
+         return Redirect::to('/admin');
         // for now we'll just echo success (even though echoing in a controller is bad)
-        echo 'SUCCESS!';
+        
 
     } else {        
 
@@ -64,6 +69,8 @@ if ($validator->fails()) {
         return Redirect::to('login');
 
     }
+    
+    
    
 }
     }

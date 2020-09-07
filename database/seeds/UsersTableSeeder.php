@@ -11,7 +11,7 @@ public function run()
     User::create(array(
         'name'     => 'admin',
         'email'    => 'admin@admin.io',
-        'password' => 'admin',
+        'password' => Hash::make('admin')
     ));
 }
 

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 use App\Comand;
+use App\Product;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class ComandController extends Controller
 {
     /**
@@ -13,9 +14,10 @@ class ComandController extends Controller
      */
     public function index()
     {
-        $cmds = Comand::all();  
+        $cmds = Comand::all();
+        $pds = Product::all();  
   
-        return view('pages.comand.index', compact('cmds'));  
+        return view('admin.pages.comand.index', compact('cmds','pds'));  
     }
 
     /**
@@ -25,7 +27,7 @@ class ComandController extends Controller
      */
     public function create()
     {
-        return view('pages.comand.create');
+        return view('admin.pages.comand.create');
     }
 
     /**
@@ -80,7 +82,7 @@ class ComandController extends Controller
     public function edit($id)
     {
           $cmd= Comand::find($id);  
-     return view('pages.comand.edit', compact('cmd')); 
+     return view('admin.pages.comand.edit', compact('cmd')); 
     }
 
     /**
@@ -122,5 +124,6 @@ class ComandController extends Controller
     {
          $cmd=Comand::find($id);  
         $cmd->delete(); 
+        return redirect('/comand/index');
     }
 }

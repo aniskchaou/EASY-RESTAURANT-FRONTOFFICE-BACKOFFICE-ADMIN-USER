@@ -3,7 +3,7 @@
   <link rel="icon" type="image/png" href="{{asset('assets/js/wow.min.js')}}{{asset('assets/img/favicon.png')}}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    Dashboard 
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -13,3 +13,5 @@
   <link href="{{asset('assets/admin/css/material-dashboard.css?v=2.1.2')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset('assets/admin/demo/demo.css')}}" rel="stylesheet" />
+
+  

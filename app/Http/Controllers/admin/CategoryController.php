@@ -26,7 +26,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('pages.category.create');  
+        return view('admin.pages.category.create');  
     }
 
     /**
@@ -43,7 +43,8 @@ class CategoryController extends Controller
   
         $cat = new Category;  
         $cat->name =  $request->get('category');
-        $cat->save();   
+        $cat->save(); 
+        return redirect('category/index');
     }
 
     /**
@@ -66,7 +67,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $cat= Category::find($id);  
-     return view('pages.category.edit', compact('cat'));  
+     return view('admin.pages.category.edit', compact('cat'));  
         
     }
 
@@ -87,6 +88,7 @@ class CategoryController extends Controller
         $cat = Category::find($id);  
         $cat->name =  $request->get('category');    
         $cat->save();
+        return redirect('category/index');
     }
 
     /**
@@ -99,5 +101,6 @@ class CategoryController extends Controller
     {
          $cat=Category::find($id);  
         $cat->delete(); 
+        return redirect('category/index');
     }
 }

@@ -10,7 +10,22 @@
     <script src="{{asset('assets/js/jquery.localScroll.min.js')}}" type="text/javascript"></script>
   <script src="{{asset('assets/js/jquery.scrollTo.min.js')}}" type="text/javascript"></script> 
     <script src="{{asset('assets/js/wow.min.js')}}" type="text/javascript"></script> 
-
+<style type="text/css">
+        .productitem{
+          background: #ff5a0b;
+          padding: 5px;
+          border-radius: 10px;
+          border: 0px;
+          border-bottom-color: currentcolor;
+          border-bottom-style: none;
+          border-bottom-width: 0px;
+          margin: 5px;
+          font-family: OSWALD-BOLD;
+          font-size: 17px;
+          color: white;
+          cursor: pointer;
+        }
+  </style>
 <!-- scroll function -->
 <script type="text/javascript">
 $(document).ready(function() {

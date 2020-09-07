@@ -284,11 +284,11 @@ input[type=text]:placeholder {
     <form method="post" action="{{ route('login.proccess') }}">  
    @csrf     
                 
-              <input type="text" placeholder="Name"  name="name"/><br/><br/>  
+              <input type="text" value="admin" placeholder="Name"  name="name"/><br/><br/>  
           
 
               
-              <input type="text" placeholder="Password"  name="password"/><br/><br/>  
+              <input type="text" value="admin" placeholder="Password"  name="password"/><br/><br/>  
            
 <br/>  
 <input type="submit" class="fadeIn fourth" value="Log In"> 

@@ -4,49 +4,49 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+      <div class="logo"><a href="{{asset('/')}}" class="simple-text logo-normal">
+          HOME
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item">
+            <a class="nav-link" href="{{asset('/admin')}}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="{{asset('/comand/index')}}">
               <i class="material-icons">person</i>
               <p>Reservations</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="{{asset('/category/index')}}">
               <i class="material-icons">content_paste</i>
               <p>Categories</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="{{asset('/message/index')}}">
               <i class="material-icons">library_books</i>
               <p>Messages</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="{{asset('/product/index')}}">
               <i class="material-icons">bubble_chart</i>
               <p>Products</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
+            <a class="nav-link" href="{{asset('/slider/index')}}">
               <i class="material-icons">location_ons</i>
               <p>Slider</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="{{asset('/user/index')}}">
               <i class="material-icons">notifications</i>
               <p>Users</p>
             </a>

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
-use App\Message;
+use App\User;
 use App\Http\Controllers\Controller;
-class MessageController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $msgs = Message::all();  
+        $usrs = User::all();  
   
-        return view('admin.pages.message.index', compact('msgs'));  
+        return view('admin.pages.user.index', compact('usrs'));  
     }
 
     /**
@@ -26,7 +26,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.message.create'); 
+      
     }
 
     /**
@@ -37,19 +37,7 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([  
-            'name'=>'required', 
-            'email'=>'required', 
-            'telephone'=>'required', 
-            'message'=>'required',  
-        ]);  
-  
-        $msg = new Message;  
-        $msg->name =  $request->get('name');
-        $msg->email =  $request->get('email');
-        $msg->telephone =  $request->get('telephone');
-        $msg->message =  $request->get('message');
-        $msg->save();
+        
     }
 
     /**
@@ -71,8 +59,7 @@ class MessageController extends Controller
      */
     public function edit($id)
     {
-        $msg= Message::find($id);  
-     return view('admin.pages.message.edit', compact('msg')); 
+        
     }
 
     /**
@@ -84,20 +71,7 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([  
-            'name'=>'required',
-            'email'=>'required',
-            'telephone'=>'required',
-            'message'=>'required',  
-             
-        ]);  
-  
-        $msg = Message::find($id);  
-        $msg->name =  $request->get('name');
-        $msg->email =  $request->get('email');
-        $msg->telephone =  $request->get('telephone');
-        $msg->message =  $request->get('message');    
-        $msg->save();
+       
     }
 
     /**
@@ -108,7 +82,6 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        $msg=Message::find($id);  
-        $msg->delete();
+      
     }
 }
