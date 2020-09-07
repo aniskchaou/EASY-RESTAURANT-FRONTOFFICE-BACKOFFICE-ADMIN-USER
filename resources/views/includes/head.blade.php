@@ -1,4 +1,4 @@
- <title>King Of Pasta</title>
+ <title>Easy Restaurant - Laravel 5</title>
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <script src="{{asset('assets/js/jquery.js')}}"></script> 
