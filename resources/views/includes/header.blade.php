@@ -8,6 +8,7 @@
                 <li> <a href="{{asset('/book/')}}">BOOK ONLINE </a></li>
                 <li><a href="{{asset('/product/')}}">MENU </a></li>
                 <li><a href="{{asset('/contact/')}}">CONTACT </a></li>
+                <li><a href="{{asset('/admin')}}">CONTACT </a></li>
                 
             </ul>
         </nav>
