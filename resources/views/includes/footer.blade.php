@@ -19,7 +19,7 @@
 
 <div class="copyrightswrapper">
     <div id="copyrights" class="container">
-      <p> Developed by Anis Kchaou  </p>
+      <p> Developed by Anis Kchaou  
  kchaouanis26@gmail.com  
        https://github.com/aniskchaou/RESTAURANT-LARAVEL-5</p>
      
