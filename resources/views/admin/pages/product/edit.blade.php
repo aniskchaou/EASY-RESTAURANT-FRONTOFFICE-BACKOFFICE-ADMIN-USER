@@ -8,7 +8,7 @@
       <h4 class="card-title ">Edit product</h4>
     </div>
     <div class="card-body">
-     <form method="post" action="{{route('product.update',$pd->id)}}">  
+     <form method="post" enctype="multipart/form-data" action="{{route('product.update',$pd->id)}}">  
 
        @csrf     
        <div class="form-group">      

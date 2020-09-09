@@ -98,12 +98,13 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
          $request->validate([  
-            'category'=>'name',  
-            'category'=>'description',  
-            'category'=>'category_id',  
-            'category'=>'price',  
-        ]);  
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+            'name'=>'required',  
+            'description'=>'required',  
+            'category_id'=>'required',  
+            'price'=>'required',
+            'image'=>'required'
+        ]); 
+        $imageName = time().'.'.$request->get('image')->getClientOriginalExtension();
          $request->image->move(public_path('images'), $imageName);
 
 
