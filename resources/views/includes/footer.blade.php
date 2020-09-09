@@ -19,9 +19,9 @@
 
 <div class="copyrightswrapper">
     <div id="copyrights" class="container">
-      <p> Developed by Anis Kchaou</p>
-      <p> kchaouanis26@gmail.com </p>
-      <p> https://github.com/aniskchaou/RESTAURANT-LARAVEL-5</p>
+      <p> Developed by Anis Kchaou  </p>
+ kchaouanis26@gmail.com  
+       https://github.com/aniskchaou/RESTAURANT-LARAVEL-5</p>
      
     </div> <!-- end of copyrights-->
 </div> <!-- end of website-->
