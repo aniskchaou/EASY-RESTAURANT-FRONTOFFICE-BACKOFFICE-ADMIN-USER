@@ -1,5 +1,5 @@
  <title>Easy Restaurant - Laravel 5</title>
-    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <script src="{{asset('assets/js/jquery.js')}}"></script> 
   <script src="{{asset('assets/js/jquery.glide.js')}}"></script>
