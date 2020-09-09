@@ -19,9 +19,10 @@
 
 <div class="copyrightswrapper">
     <div id="copyrights" class="container">
-    
-     <p>Copyright 2014 <a href="https://www.facebook.com/Mido.HHH"> Mohamed Sobhy </a> All Rights Reserved</p>
-    
+      <p> Developed by Anis Kchaou</p>
+      <p> kchaouanis26@gmail.com </p>
+      <p> https://github.com/aniskchaou/RESTAURANT-LARAVEL-5</p>
+     
     </div> <!-- end of copyrights-->
 </div> <!-- end of website-->
   
