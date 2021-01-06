@@ -1,4 +1,15 @@
-## Screenshot
+# EasyRestaurant
+EasyRestaurant is a web application to manage online reservations for a restaurant.
+
+## Informations:
+- status under development
+- Latest version 1.0
+- Sector: service
+- Created: November 2020
+- Last updated: November 2020
+
+
+
 <p align="center"><img src="intro.png" /></p>
 
 <br>
