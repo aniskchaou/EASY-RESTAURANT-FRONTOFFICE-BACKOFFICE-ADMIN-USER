@@ -5,7 +5,7 @@
 <div class="col-md-12">
   <div class="card">
     <div class="card-header card-header-primary">
-      <h4 class="card-title ">Create Product</h4>
+      <h4 class="card-title ">Create Food</h4>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -25,6 +25,57 @@
           <label for="first_name">Category</label><br/><br/>  
           <select type="text" class="form-control" name="category_id"/>
            @foreach($cats as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+          <br/><br/>  
+        </div>
+
+        <div class="form-group">      
+          <label for="first_name">Ingredients</label><br/><br/>  
+          <select type="text" class="form-control" name="ingredients"/>
+           @foreach($ingredients as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+          <br/><br/>  
+        </div>
+
+        <div class="form-group">      
+          <label for="first_name">Size</label><br/><br/>  
+          <select type="text" class="form-control" name="size"/>
+           @foreach($sizes as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+          <br/><br/>  
+        </div>
+
+        <div class="form-group">      
+          <label for="first_name">Addons</label><br/><br/>  
+          <select type="text" class="form-control" name="addons"/>
+           @foreach($addons as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+          <br/><br/>  
+        </div>
+
+        <div class="form-group">      
+          <label for="first_name">Type</label><br/><br/>  
+          <select type="text" class="form-control" name="foodtype"/>
+           @foreach($foodtypes as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+          <br/><br/>  
+        </div>
+
+
+        <div class="form-group">      
+          <label for="first_name">kitchen</label><br/><br/>  
+          <select type="text" class="form-control" name="kitchen"/>
+           @foreach($kitchens as $cat)  
               <option value="{{$cat->id}}">{{$cat->name}}</option>
            @endforeach
           </select>

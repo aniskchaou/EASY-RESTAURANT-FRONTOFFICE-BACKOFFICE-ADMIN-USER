@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\User;
 use App\Http\Controllers\Controller;
+
+
 class UserController extends Controller
 {
     /**
@@ -15,7 +17,6 @@ class UserController extends Controller
     public function index()
     {
         $usrs = User::all();  
-  
         return view('admin.pages.user.index', compact('usrs'));  
     }
 

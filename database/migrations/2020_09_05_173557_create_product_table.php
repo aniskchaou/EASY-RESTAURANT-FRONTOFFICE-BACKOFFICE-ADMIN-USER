@@ -19,6 +19,11 @@ class CreateProductTable extends Migration
             $table->string('description');
             $table->string('image');
             $table->integer('category_id');
+            $table->integer('kitchen');
+            $table->integer('ingredients');
+            $table->integer('type');
+            $table->integer('size');
+            $table->integer('addons');
             $table->integer('price');
         });
     }

@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    
+    /**
+     * get all products
+     */
     public function index()
     {
     	$pds = Product::all();
@@ -15,6 +17,10 @@ class ProductController extends Controller
   
         return view('product.product', compact('pds','cats'));
     }
+
+    /**
+     * find product by id
+     */
     function productByCategory($id)
     {
     	

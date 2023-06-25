@@ -39,8 +39,6 @@
         <label for="first_name">address:</label><br/><br/>  
         <input type="text" class="form-control" name="address" value="{{$cmd->address}}"><br/><br/>  
       </div>
-
-      
       
       <button type="submit" class="btn-btn" >Update</button>  
     </form>  

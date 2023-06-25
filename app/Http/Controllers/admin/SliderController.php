@@ -5,6 +5,7 @@ use App\Slider;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 class SliderController extends Controller
 {
     /**

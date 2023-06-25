@@ -1,8 +1,5 @@
 @extends('layouts.admin')  
 @section('content')  
-
-
-
 <div class="col-md-12">
 	<div class="card">
 		<div class="card-header card-header-primary">
@@ -24,5 +21,4 @@
 	</div>
 </div>
 </div>
-
 @endsection  

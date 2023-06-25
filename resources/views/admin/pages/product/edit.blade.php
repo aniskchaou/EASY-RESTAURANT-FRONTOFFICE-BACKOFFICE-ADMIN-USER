@@ -1,7 +1,5 @@
 @extends('layouts.admin')  
 @section('content')  
-
-
 <div class="col-md-12">
   <div class="card">
     <div class="card-header card-header-primary">
@@ -28,7 +26,56 @@
               <option value="{{$cat->id}}">{{$cat->name}}</option>
            @endforeach
           </select>
+        <br/><br/>  
+      </div>
 
+        <div class="form-group">      
+        <label for="first_name">Ingredients</label><br/><br/>  
+                  <select type="text" class="form-control" name="ingredients"/>
+           @foreach($ingredients as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+        <br/><br/>  
+      </div>
+
+        <div class="form-group">      
+        <label for="first_name">kitchen</label><br/><br/>  
+                  <select type="text" class="form-control" name="kitchen"/>
+           @foreach($kitchens as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+        <br/><br/>  
+      </div>
+
+        <div class="form-group">      
+        <label for="first_name">Type</label><br/><br/>  
+                  <select type="text" class="form-control" name="foodtype"/>
+           @foreach($foodtypes as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+        <br/><br/>  
+      </div>
+
+        <div class="form-group">      
+        <label for="first_name">Addons</label><br/><br/>  
+                  <select type="text" class="form-control" name="addons"/>
+           @foreach($addons as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
+        <br/><br/>  
+      </div>
+
+        <div class="form-group">      
+        <label for="first_name">Size</label><br/><br/>  
+                  <select type="text" class="form-control" name="size"/>
+           @foreach($sizes as $cat)  
+              <option value="{{$cat->id}}">{{$cat->name}}</option>
+           @endforeach
+          </select>
         <br/><br/>  
       </div>
 
@@ -41,7 +88,8 @@
           <label for="first_name">Image</label><br/><br/>  
           
         </div>
-       <input type="file" name="image">
+         <input type="file" class="form-control" name="image" value="{{$pd->image}}">
+       
 
       <button type="submit" class="btn btn-primary" >Edit</button>  
     </form> 

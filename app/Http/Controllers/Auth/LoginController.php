@@ -38,8 +38,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * Logout
+     */
     public function logout(Request $request) {
-  Auth::logout();
-  return redirect('/');
-}
+      Auth::logout();
+      return redirect('/');
+    }
 }

@@ -5,6 +5,11 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Size;
+use App\Ingredients;
+use App\FoodType;
+use App\Kitchen;
+use App\Addons;
 use App\Http\Controllers\Controller;
 class ProductController extends Controller
 {
@@ -29,7 +34,12 @@ class ProductController extends Controller
     public function create()
     {
         $cats = Category::all();
-        return view('admin.pages.product.create',compact('cats')); 
+        $sizes = Size::all();
+        $ingredients = Ingredients::all();
+        $foodtypes = FoodType::all();
+        $kitchens = Kitchen::all();
+        $addons = Addons::all();
+        return view('admin.pages.product.create',compact('cats','sizes','ingredients','foodtypes','kitchens','addons')); 
     }
 
     /**
@@ -57,6 +67,11 @@ class ProductController extends Controller
         $pd->description =  $request->get('description');
         $pd->category_id =  $request->get('category_id');
         $pd->price =  $request->get('price');
+        $pd->ingredients =  $request->get('ingredients');
+        $pd->kitchen =  $request->get('kitchen');
+        $pd->size =  $request->get('size');
+        $pd->type =  $request->get('foodtype');
+        $pd->addons =  $request->get('addons');
         $pd->image =  $imageName;
         $pd->save();
         
@@ -85,7 +100,12 @@ class ProductController extends Controller
     {
         $cats = Category::all();
         $pd= Product::find($id);  
-     return view('admin.pages.product.edit', compact('pd','cats')); 
+         $sizes = Size::all();
+        $ingredients = Ingredients::all();
+        $foodtypes = FoodType::all();
+        $kitchens = Kitchen::all();
+        $addons = Addons::all();
+     return view('admin.pages.product.edit', compact('pd','cats','sizes','ingredients','foodtypes','kitchens','addons')); 
     }
 
     /**
@@ -101,11 +121,10 @@ class ProductController extends Controller
             'name'=>'required',  
             'description'=>'required',  
             'category_id'=>'required',  
-            'price'=>'required',
-            'image'=>'required'
+            'price'=>'required'
         ]); 
-        $imageName = time().'.'.$request->get('image')->getClientOriginalExtension();
-         $request->image->move(public_path('images'), $imageName);
+        // $imageName = time().'.'.$request->get('image')->getClientOriginalExtension();
+        //  $request->image->move(public_path('images'), $imageName);
 
 
         $pd = Product::find($id);  
@@ -113,7 +132,14 @@ class ProductController extends Controller
         $pd->description =  $request->get('description');
         $pd->category_id =  $request->get('category_id');
         $pd->price =  $request->get('price');
-        $pd->image =  $imageName;
+
+        $pd->ingredients =  $request->get('ingredients');
+        $pd->kitchen =  $request->get('kitchen');
+        $pd->size =  $request->get('size');
+        $pd->type =  $request->get('foodtype');
+        $pd->addons =  $request->get('addons');
+
+        //$pd->image =  $imageName;
         $pd->save();
         return redirect('/product/index');
     }

@@ -1,8 +1,8 @@
 
 <html>
 <head>
-	<title>Login</title>
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<title>Login</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -125,7 +125,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text] ,[type=password] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -270,31 +270,24 @@ input[type=text]:placeholder {
 #icon {
   width:60%;
 }
+#login-btn{ cursor: pointer; }
 
 </style>
 <body>
 
-
+<!--============ login form ===============-->
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
-
-    
     <br><br>
+    <img src="{{asset('assets/images/log.png')}}" alt="logo" width="80" height="80">
+    <h5>EASY RESTAURANT </h5>
     <form method="post" action="{{ route('login.proccess') }}">  
-   @csrf     
-                
-              <input type="text" value="admin" placeholder="Name"  name="name"/><br/><br/>  
-          
-
-              
-              <input type="text" value="admin" placeholder="Password"  name="password"/><br/><br/>  
-           
-<br/>  
-<input type="submit" class="fadeIn fourth" value="Log In"> 
-</form>
-    
-
+      @csrf       
+      <input type="text" value="admin" placeholder="Name"  name="name"/><br/><br/>    
+      <input type="password" value="admin" placeholder="Password"  name="password"/><br/><br/>     
+      <br/>  
+      <input type="submit" id="login-btn" class="fadeIn fourth" value="Log In"> 
+    </form>
   </div>
 </div>
 </body>

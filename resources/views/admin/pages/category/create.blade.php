@@ -1,9 +1,5 @@
 @extends('layouts.admin')  
 @section('content')  
-
-
-
-
 <div class="col-md-12">
 	<div class="card">
 		<div class="card-header card-header-primary">
@@ -14,7 +10,7 @@
 				<form method="post" action="{{ route('category.store') }}">  
 					@csrf     
 					<div class="form-group">      
-						<label for="first_name">Category name</label><br/><br/>  
+						<label for="first_name">Name</label><br/><br/>  
 						<input type="text" class="form-control" name="category"/><br/><br/>  
 					</div>  
 					<br/>  
@@ -24,13 +20,4 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
 @endsection  
