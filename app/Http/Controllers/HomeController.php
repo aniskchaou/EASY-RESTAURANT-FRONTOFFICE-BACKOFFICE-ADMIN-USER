@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Request;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
@@ -49,19 +49,19 @@ class HomeController extends Controller
         );
 
         // run the validation rules on the inputs from the form
-        $validator = Validator::make(Input::all(), $rules);
+        $validator = Validator::make(Request::all(), $rules);
 
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
             return Redirect::to('login')
                 ->withErrors($validator) // send back all errors to the login form
-                ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
+                ->withInput(Request::except('password')); // send back the input (not the password) so that we can repopulate the form
         } else {
 
             // create our user data for the authentication
             $userdata = array(
-                'name'     => Input::get('name'),
-                'password'  => Input::get('password')
+                'name'     => Request::get('name'),
+                'password'  => Request::get('password')
             );
   
             // attempt to do the login

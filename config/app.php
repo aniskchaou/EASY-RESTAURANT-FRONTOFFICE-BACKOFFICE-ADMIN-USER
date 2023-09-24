@@ -207,6 +207,8 @@ return [
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
+        'Input' => Illuminate\Support\Facades\Request::class,
+        
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
